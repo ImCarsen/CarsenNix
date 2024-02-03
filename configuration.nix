@@ -21,7 +21,7 @@
     users.users.carsen = {
         isNormalUser = true;
         description = "carsen";
-        extraGroups = [ "networkmanager", "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [];
     };
 
