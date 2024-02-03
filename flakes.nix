@@ -11,7 +11,7 @@
         lib = nixpkgs.lib;
     in {
         nixosConfigurations = {
-            carsen-nixhypr = nixpkgs.lib.nixosSytem {
+            nixos = nixpkgs.lib.nixosSytem {
                 system = "x86_64-linux";
                 specialArgs = { inherit inputs; }; # Hyprland stuff
                 modules = [ ./configuration.nix ];
