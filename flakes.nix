@@ -11,7 +11,7 @@
         lib = nixpkgs.lib;
     in {
         nixosConfigurations = {
-            nixos = nixpkgs.lib.nixosSytem {
+            nixos = lib.nixosSytem {
                 specialArgs = { inherit inputs; }; # Hyprland stuff
                 modules = [ ./configuration.nix ];
             };
