@@ -6,15 +6,12 @@
         hyprland.url = "github:hyprwm/Hyprland";
     };
 
-    outputs = { self, nixpkgs, ... }:
-    let 
-        lib = nixpkgs.lib;
-    in {
-        nixosConfigurations = {
-            nixos = lib.nixosSytem {
-                specialArgs = { inherit inputs; }; # Hyprland stuff
-                modules = [ ./configuration.nix ];
-            };
+    outputs = {nixpkgs, ...} @ inputs: {
+        nixosConfigurations.HOSTNAME = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; }; # this is the important part
+            modules = [
+                ./configuration.nix
+            ];
         };
-    };
+    }
 }
