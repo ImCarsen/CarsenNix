@@ -12,7 +12,6 @@
     in {
         nixosConfigurations = {
             nixos = nixpkgs.lib.nixosSytem {
-                system = "x86_64-linux";
                 specialArgs = { inherit inputs; }; # Hyprland stuff
                 modules = [ ./configuration.nix ];
             };
